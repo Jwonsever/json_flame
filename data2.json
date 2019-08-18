@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "id": "b3b6a862-3a47-431c-84e0-69abbfcf037f",
+      "short_id": [[["a"], ["b"], ["c"]], ["a"], ["b"], ["c"]],
+      "lender_id": "ad76c2aa-c465-4f5a-9a99-aeeccbe70db2",
+      "status": 120,
+      "purchase_decision_made_by": "479494b0-5fa5-4bd7-b3a3-e78478e0707a",
+      "lender_loan_id": "FTF_33401_25591",
+      "sent_to_af_on": "2019-07-23",
+      "ic_reviewed_on": null,
+      "purchase_decision_notes_external": null,
+      "approved_for_warehouse_on": "2019-07-23",
+      "af_invested_on": "2019-07-24"
+    },
+    {
+      "id": "b3b6a862-3a47-431c-84e0-69abbfcf037f",
+      "short_id": [["a"], ["b"], ["c"]],
+      "lender_id": "ad76c2aa-c465-4f5a-9a99-aeeccbe70db2",
+      "status": 120,
+      "purchase_decision_made_by": "479494b0-5fa5-4bd7-b3a3-e78478e0707a",
+      "lender_loan_id": "FTF_33401_25591",
+      "sent_to_af_on": "2019-07-23",
+      "ic_reviewed_on": null,
+      "purchase_decision_notes_external": null,
+      "approved_for_warehouse_on": "2019-07-23",
+      "af_invested_on": "2019-07-24"
+    }
+  ]
+}
