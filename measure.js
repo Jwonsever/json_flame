@@ -92,21 +92,8 @@ function measureArrayAggregate(s, name, mode) {
   for (let k in asJson) {
     let i = JSON.stringify(asJson[k]);
     if (i.match(/^\{.*\}$/)) {
-      partialChild = measureObject(i, "object_" + idx, mode);
-      for (let subIndex in partialChild.children) {
-        let subChild = partialChild.children[subIndex];
-        subChild.children = subChild.children || [];
-
-        af = children[subChild.name];
-        if (!af) {
-          children[subChild.name] = subChild;
-        } else {
-          af.value += subChild.value;
-          // This needs to be a deep merge, not just a concat.  Subobjects get lost.
-          af.children = af.children.concat(subChild.children);
-          children[subChild.name] = af;
-        }
-      }
+      sibling = measureObject(i, "object_" + idx, mode);
+      out.children = mergeChildren(out.children, sibling.children);
     } else if (i.match(/^\[.*\]$/)) {
       out.children.push(measureArrayAggregate(i, "array_" + idx, mode));
     } else {
@@ -118,6 +105,35 @@ function measureArrayAggregate(s, name, mode) {
 
   out.children = out.children.concat(Object.values(children));
   return out;
+}
+
+// Combines two lists of children
+function mergeChildren(c1, c2) {
+  if (!c1 || c1.length === 0) {
+    return c2;
+  }
+
+  if (!c2 || c2.length === 0) {
+    return c1;
+  }
+
+  // make the ref map.
+  let children = {};
+  c1.map(item => {
+    children[item.name] = item;
+  });
+
+  // Add the children
+  c2.map(item => {
+    if (children[item.name]) {
+      let ref = children[item.name];
+      ref.value += item.value;
+      ref.children = mergeChildren(ref.children, item.children);
+      children[item.name] = ref;
+    }
+  });
+
+  return Object.values(children);
 }
 
 // measureObject has 2 options which can be included via the mode param:
