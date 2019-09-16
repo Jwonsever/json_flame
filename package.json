@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "child_process": "^1.0.2",
     "d3": "^5.9.7",
     "d3-flame-graph": "^2.0.8",
     "d3-tip": "^0.9.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "open": "^6.4.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
