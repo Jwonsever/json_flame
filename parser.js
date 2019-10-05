@@ -5,9 +5,7 @@ const { exec } = require("child_process");
 var open = require("open");
 
 if (process.argv.length == 2) {
-  console.log(
-    "Must supply an input file. ex: `node parser.js input.json [flags]`"
-  );
+  console.log("Must supply an input file. ex: `node parser.js input.json [flags]`");
   process.exit(1);
 }
 
@@ -39,6 +37,7 @@ if (arrayMode) {
 }
 
 // Measure the input file.
+console.log("Running in " + mode + " mode.");
 let output = m.measureObject(s, "root", mode);
 console.log(output);
 
