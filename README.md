@@ -6,6 +6,8 @@ Requires node.  Written using node 11.13.
 
 `> node parser.js input.json [options]`
 
+# Options
+
 Options are -a and -k.
 
 -a : Aggregate mode.
@@ -14,7 +16,7 @@ Options are -a and -k.
 
 # About
 
-This tool takes an input JSON, generates an out.json file with the performance data, then starts a local express node app to visualize the data using D3 using d3-flame-graph.
+This tool takes an input JSON, generates an out.json file with the performance data, then starts a local express node app to visualize the data using D3 using d3-flame-graph.  The performance information is a breakdown of the raw size of the JSON object and subobjects.  A few simple examples are in the `test.js` file.  The images below were made from `generated.json`.
 
 Without any optional parameters, you will see every composite object.  Unfortunately, that output often is impossible to read:
 
