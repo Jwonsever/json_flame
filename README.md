@@ -3,11 +3,13 @@
 Requires node.  Written using node 11.13.
 
 `> npm install`
+
 `> node parser.js input.json [options]`
 
 Options are -a and -k.
 
 -a : Aggregate mode.
+
 -k : Keys mode.
 
 # About
